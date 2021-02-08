@@ -17,7 +17,7 @@ module.exports = {
     new Dotenv(),
     new CleanWebpackPlugin(), 
     new HtmlWebpackPlugin({
-      title: 'Shape Tracker',
+      title: 'Giphy Grabber',
       template: './src/index.html',
       inject: 'body'
     })
@@ -25,19 +25,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: "eslint-loader"
-      },
-      {
-        test: /\.(gif|png|jpe?g)$/,
+        test: /\.(gif|psd|png|jpe?g)$/,
         use: [
           {
             loader: 'file-loader',
@@ -55,6 +43,18 @@ module.exports = {
           'html-loader'
         ]
       },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader"
+      }
     ]
   }
 };
