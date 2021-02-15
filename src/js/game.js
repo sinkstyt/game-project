@@ -1,12 +1,19 @@
 export default class Game {
-  constructor(player, isGameOver = false, numTurns = 0) {
+  constructor(player, numTurns = 0) {
     this.player = player;
-    this.isGameOver = isGameOver;
+    this.isGameOver = "";
     this.numTurns = numTurns;
+    this.result;
   }
 
   endGame() {
-    this.player.health <= 0 || (this.numTurns === 20 && this.player.inventory.get("Craft Item") < 3) ?  this.isGameOver = true : this.isGameOver = false;
-    return this.isGameOver;
+    if (this.player.health <= 0 || (this.numTurns === 20 && this.player.inventory.get("Craft Item") < 3)) {
+      this.isGameOver = "lose";
+    } else if (this.player.inventory.get("Craft Item") === 3) {
+      this.isGameOver = "win";
+    } else {
+      this.isGameOver = "continue"; 
+    }
   }
 }
+
