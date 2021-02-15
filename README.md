@@ -23,20 +23,28 @@
     - Sub Constructor.
 3. player choice: 
   * go on adventure (automatic): returns gold/resources(iron).
+    - returns gold/iron between 1-3.
+    - or lose gold/iron/health 1-3.
+    - if health 0 = day lost.
   * go to shop--> browse --> purchase item(s): iron, iron maker, welder(to build parts).
-  * construct parts (requires 5 iron).
+  * construct parts (requires 5 iron + welder)
 
 player can open shop menu.
     - Object w/ arrays depending on what we want (Difficulity, progress, player level etc.)
-4. player can buy items through shop.
-5. player can view their inventory.
-    - Equip Weapons, Armor, etc (Different sub categories)
+    - iron price = 3 gold.
+    - iron maker(1 iron/day) = 5 gold
+    - welder = 3
+4. player can view their inventory and stats.
+    - Gold
+    - Iron
+    - Health
+    - Equip Weapons, Armor, etc (Different sub categories)**stretch**
+    - _Update UI function to be called every click?_
 
-6. player can win: user need 3 spaceship parts in inventory.
+5. player can win: user need 3 spaceship parts in inventory.
     - Dungeon Rewards?
-7. player can lose by not finishing in 20 rounds (or reaching 0 hp - stretch?).
-8. player can end turn.
-9. player can view stats.
+6. player can lose by not finishing in 20 rounds (or reaching 0 hp - stretch?).
+7. player can end turn.
 
 * Battle system:
 1. player can fight NPCs.
