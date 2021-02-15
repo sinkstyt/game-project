@@ -17,4 +17,8 @@ describe("Player", () => {
     expect(newPlayer.gold).toEqual(2);
     expect(newPlayer.iron).toEqual(0);
   });
+
+  test("should store 100 at key 'health' upon instantiaion of Player", () => {
+    expect(newPlayer.health).toEqual(100);
+  });
 });
