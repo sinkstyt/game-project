@@ -60,3 +60,7 @@ Copyright (c) 2021 **_Tyler Sinks_**
 ## Contact Information
 * Reach Tyler: via <a href="https://www.linkedin.com/in/tyler-sinks-93438137/" target="_blank">LinkedIn</a> or <a href="mailto:tyler.sinksa@gmail.com" target="_blank">email</a>.<br>
 Checkout Tyler's <a href="https://github.com/sinkstyt" target="_blank">GitHub profile</a>.</li>
+
+
+Some Brainstorming notes from Day 1:
+
