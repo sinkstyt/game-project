@@ -18,4 +18,11 @@ describe("Game", () => {
     const newGame1 = new Game(player1);
     expect(newGame1.endGame()).toEqual(true);
   });
+
+  test("should return true if the number of turns is 20 and player doesn't have 3 Craft Itmes.", () => {
+    const player1 = new Player("Tyler");
+    const newGame1 = new Game(player1);
+    newGame1.numTurns = 20;
+    expect(newGame1.endGame()).toEqual(true);
+  });
 }); 
