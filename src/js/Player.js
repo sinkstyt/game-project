@@ -9,7 +9,7 @@ export default class Player {
     );
     this.gold = 2;
     this.iron = 0;
-    // this.health = 100;
+    this.health = 100;
   }
 
 }
