@@ -1,8 +1,9 @@
-# {#Application Name}
+# Roguelike Sim Game
 
-#### {Synopsis of Application}
+#### A game that showcases an MVP of:
+* 
 
-#### By _**Tyler Sinks**_
+#### By _**Logan Roth, Morgan Bradford, Tien Nguyen, and Tyler Sinks**_
 
 ## Technologies Used
 
@@ -12,6 +13,50 @@
 * _see package.JSON for thorough list of dependencies_
 
 ## Description
+
+### DAY 1 brainstorming:
+## MVP Goals:
+
+1. player can start game.
+    - Overall Game Constructor.
+2. player can enter name.
+    - Sub Constructor.
+3. player choice: 
+  * go on adventure (automatic): returns gold/resources(iron).
+  * go to shop--> browse --> purchase item(s): iron, iron maker, welder(to build parts).
+  * construct parts (requires 5 iron).
+
+player can open shop menu.
+    - Object w/ arrays depending on what we want (Difficulity, progress, player level etc.)
+4. player can buy items through shop.
+5. player can view their inventory.
+    - Equip Weapons, Armor, etc (Different sub categories)
+
+6. player can win: user need 3 spaceship parts in inventory.
+    - Dungeon Rewards?
+7. player can lose by not finishing in 20 rounds (or reaching 0 hp - stretch?).
+8. player can end turn.
+9. player can view stats.
+
+* Battle system:
+1. player can fight NPCs.
+2. player can earn experience.
+3. player can gain items (weapons, armor, space parts).
+
+* RPG sim
+* A game that can be completed by the user: win/loss.
+* In game tasks: defeat boss; max money/buy the land; rescue the prince/princess.
+* Economy: gold, shops, trading.
+* Resource management: grows over time/rounds. Traits/equipment may increase amount gained.
+ 
+# strech goals: 
+* Repeatable story/multiple paths.
+
+
+# Notes:
+- New Feature = New Branch (Example: "game-shop-[person's name]")
+- Each Feature should be like task clipboard
+- Feature = done, everyone on the team meets to do a PR and merge
 
 ## Setup/Installation Requirements
 
