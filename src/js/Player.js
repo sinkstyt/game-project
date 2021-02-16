@@ -20,4 +20,7 @@ export default class Player {
     this.iron++;
     }
   }
+  buyIronMaker() {
+
+  }
 }

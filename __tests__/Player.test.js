@@ -33,7 +33,14 @@ describe("Player", () => {
     newPlayer.buyIron();
     expect(newPlayer.iron).toEqual(1);
   });
+
   test("should return -1 if gold is less than 3", () => {
     expect(newPlayer.buyIron()).toEqual(-1);
+  });
+
+  test("should subtract 5 gold from this.player", () => {
+    newPlayer.gold += 5;
+    newPlayer.buyIronMaker();
+    expect(newPlayer.gold).toEqual(2);
   });
 });
