@@ -13,7 +13,11 @@ export default class Player {
     this.health = 100;
   }
   buyIron() {
+    if (this.gold < 3) {
+      return -1;
+    } else {
     this.gold -= 3;
     this.iron++;
+    }
   }
 }
