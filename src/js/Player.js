@@ -13,6 +13,6 @@ export default class Player {
     this.health = 100;
   }
   constructPart() {
-    
+    this.iron -= 5;
   }
 }
