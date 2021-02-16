@@ -21,4 +21,10 @@ describe("Player", () => {
   test("should store 100 at key 'health' upon instantiaion of Player", () => {
     expect(newPlayer.health).toEqual(100);
   });
+
+  test("should subtract 3 gold when iron purchase is called", () => {
+    newPlayer.gold += 2;
+    newPlayer.buyIron();
+    expect(newPlayer.gold).toEqual(1);
+  });
 });
