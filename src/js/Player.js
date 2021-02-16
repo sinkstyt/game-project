@@ -4,7 +4,8 @@ export default class Player {
     this.inventory = new Map(
       [
         ["Weapons", []],
-        ["Armor", []]
+        ["Armor", []],
+        ["Craft Item", 0]
       ]
     );
     this.gold = 2;

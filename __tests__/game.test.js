@@ -23,4 +23,10 @@ describe("Game", () => {
     newGame.numTurns = 20;
     expect(newGame.endGame()).toEqual("lose");
   });
+
+  test("should assign newGame.isGameOver to 'win' if number of turns is less than 20 and the player has three Craft Items", () => {
+    player1.health = 100;
+    player1.inventory.set("Craft Item", 3);
+    expect(newGame.endGame()).toEqual('win');
+  });
 }); 
