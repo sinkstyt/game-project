@@ -33,6 +33,9 @@ export default class Player {
     this.iron += Math.floor(Math.random() * 2) + 1;
   }
   buyWelder() {
+    if (this.gold < 3) {
+      return -1;
+    }
     this.gold -= 3;
     this.inventory.set("Welder", 1);
   }
