@@ -15,4 +15,7 @@ export default class Player {
   buyIron() {
     this.gold -= 3;
   }
+  venture() {
+    this.roll = Math.floor(Math.random() * 3);
+  }
 }
