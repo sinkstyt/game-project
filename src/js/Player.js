@@ -13,9 +13,13 @@ export default class Player {
     this.health = 100;
   }
   constructPart() {
-    this.iron -= 5;
-    let item = this.inventory.get("Craft Item");
-    item += 1;
-    this.inventory.set("Craft Item", item);
+    if (this.iron < 5) {
+      return -1;
+    } else {
+      this.iron -= 5;
+      let item = this.inventory.get("Craft Item");
+      item += 1;
+      this.inventory.set("Craft Item", item);
+    }
   }
 }
