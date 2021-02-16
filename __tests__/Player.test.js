@@ -21,4 +21,22 @@ describe("Player", () => {
   test("should store 100 at key 'health' upon instantiaion of Player", () => {
     expect(newPlayer.health).toEqual(100);
   });
+
+  test("should decrement player's health by a random value between 0 and 20, both inclusive", () => {
+    let result = newPlayer.venture();
+    while(result < 80) {
+      result = newPlayer.venture();
+    } 
+    expect(newPlayer.health).toBeGreaterThanOrEqual(80);
+    expect(newPlayer.health).toBeLessThanOrEqual(100);
+  });
+
+  test("should increment player's iron by a random value between 1 and 3, both inclusive. OR, should increment player's gold by a random value between 1 and 3, both inclusive. OR, should increment player's gold by a random value between 1 and 3, both inclusive", () => {
+    newPlayer.venture();
+    expect(newPlayer.iron).toBeGreaterThanOrEqual(0);
+    expect(newPlayer.iron).toBeLessThanOrEqual(3);
+    expect(newPlayer.gold).toBeGreaterThanOrEqual(2);
+    expect(newPlayer.gold).toBeLessThanOrEqual(5);
+  });
+  
 });
