@@ -53,4 +53,53 @@ describe("Player", () => {
     expect(newPlayer.health).toBeGreaterThanOrEqual(80);
     expect(newPlayer.health).toBeLessThanOrEqual(100);
   });
+
+  test("should increment player's iron value by one", () => {
+    newPlayer.gold = 4;
+    newPlayer.buyIron();
+    expect(newPlayer.iron).toEqual(1);
+  });
+
+  test("should return -1 if gold is less than 3", () => {
+    expect(newPlayer.buyIron()).toEqual(-1);
+  });
+
+  test("should subtract 5 gold from this.player", () => {
+    newPlayer.gold += 5;
+    newPlayer.buyIronMaker();
+    expect(newPlayer.gold).toEqual(2);
+  });
+
+  test("should add iron maker to inventory", () => {
+    newPlayer.gold += 5;
+    newPlayer.buyIronMaker();
+    expect(newPlayer.inventory.get("Iron Maker")).toEqual(1);
+  });
+
+  test("should return -1 if gold is less than 5", () => {
+    expect(newPlayer.buyIronMaker()).toEqual(-1);
+  });
+
+  test("should add 1-2 iron to this.iron", () => {
+    newPlayer.useIronMaker();
+    expect(newPlayer.iron).toBeGreaterThanOrEqual(1);
+    expect(newPlayer.iron).toBeLessThanOrEqual(2);
+  });
+
+  test("should subtract 3 gold from newPlayer.gold", () => {
+    newPlayer.gold += 2;
+    newPlayer.buyWelder();
+    expect(newPlayer.gold).toEqual(1);
+  });
+
+  test("should add 1 to the value stored at inventory.get('Welder')", () => {
+    newPlayer.gold += 2;
+    newPlayer.buyWelder();
+    expect(newPlayer.inventory.get("Welder")).toEqual(1);
+  });
+
+  test("should return -1 if newPlayer.gold is less than 3", () => {
+    expect(newPlayer.buyWelder()).toEqual(-1);
+  });
 });
+
