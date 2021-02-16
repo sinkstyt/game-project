@@ -14,5 +14,8 @@ export default class Player {
   }
   constructPart() {
     this.iron -= 5;
+    let item = this.inventory.get("Craft Item");
+    item += 1;
+    this.inventory.set("Craft Item", item);
   }
 }

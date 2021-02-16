@@ -27,4 +27,12 @@ describe("Player", () => {
     newPlayer.constructPart();
     expect(newPlayer.iron).toEqual(2);
   });
+
+  test("should create 1 space part", () => {
+    newPlayer.iron += 7;
+    newPlayer.constructPart();
+    expect(newPlayer.inventory.get("Craft Item")).toEqual(1);
+  });
+
+
 });
