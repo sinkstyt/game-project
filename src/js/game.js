@@ -3,7 +3,6 @@ export default class Game {
     this.player = player;
     this.isGameOver = "";
     this.numTurns = numTurns;
-    this.result;
   }
 
   endGame() {
@@ -14,6 +13,7 @@ export default class Game {
     } else {
       this.isGameOver = "continue"; 
     }
+    return this.isGameOver;
   }
 }
 
