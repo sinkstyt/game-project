@@ -17,12 +17,19 @@ export default class Player {
     if (this.gold < 3) {
       return -1;
     } else {
-    this.gold -= 3;
-    this.iron++;
+      this.gold -= 3;
+      this.iron++;
     }
   }
   buyIronMaker() {
-    this.gold -=5;
-    this.inventory.set("Iron Maker", 1);
+    if (this.gold < 5) {
+      return -1;
+    } else {
+      this.gold -=5;
+      this.inventory.set("Iron Maker", 1);
+    }
+  }
+  useIronMaker() {
+    
   }
 }
