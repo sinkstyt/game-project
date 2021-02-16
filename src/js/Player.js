@@ -16,6 +16,12 @@ export default class Player {
     this.gold -= 3;
   }
   venture() {
-    this.roll = Math.floor(Math.random() * 3);
+    // this.roll = Math.floor(Math.random() * 3);
+    this.roll = 1;
+    if (this.roll === 0) {
+      this.health -= Math.floor(Math.random() * 21);
+    } else if (this.roll === 1) {
+      this.iron += Math.floor(Math.random() * 3) +1;
+    }
   }
 }

@@ -34,9 +34,15 @@ describe("Player", () => {
     expect(newPlayer.roll).toBeLessThanOrEqual(2);
   });
 
-  // test("should increment player's iron by a random value between 1 and 3, both inclusive", () => {
-  //   newPlayer.venture();
-  //   expect(newPlayer.iron).toBeGreaterThanOrEqual(1);
-  //   expect(newPlayer.iron).toBeLessThanOrEqual(3);
-  // });
+  test("should decrement player's health by a random value between 0 and 20, both inclusive", () => {
+    newPlayer.venture();
+    expect(newPlayer.health).toBeGreaterThanOrEqual(80);
+    expect(newPlayer.health).toBeLessThanOrEqual(100);
+  });
+
+  test("should increment player's iron by a random value between 1 and 3, both inclusive", () => {
+    newPlayer.venture();
+    expect(newPlayer.iron).toBeGreaterThanOrEqual(1);
+    expect(newPlayer.iron).toBeLessThanOrEqual(3);
+  });
 });
