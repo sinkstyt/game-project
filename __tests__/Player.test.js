@@ -27,4 +27,10 @@ describe("Player", () => {
     newPlayer.buyIron();
     expect(newPlayer.gold).toEqual(1);
   });
+
+  test("should increment player's iron value by one", () => {
+    newPlayer.gold = 4;
+    newPlayer.buyIron();
+    expect(newPlayer.iron).toEqual(1);
+  });
 });
