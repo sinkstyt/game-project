@@ -22,9 +22,9 @@ describe("Player", () => {
     expect(newPlayer.health).toEqual(100);
   });
 
-  test("should subtract 3 gold when iron purchase is called", () => {
-    newPlayer.gold += 2;
-    newPlayer.buyIron();
-    expect(newPlayer.gold).toEqual(1);
+  test("should subtract 5 iron from newPlayer.iron", () => {
+    newPlayer.iron += 7;
+    newPlayer.constructPart();
+    expect(newPlayer.iron).toEqual(2);
   });
 });

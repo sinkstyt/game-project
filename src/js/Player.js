@@ -12,7 +12,7 @@ export default class Player {
     this.iron = 0;
     this.health = 100;
   }
-  buyIron() {
-    this.gold -= 3;
+  constructPart() {
+    
   }
 }
