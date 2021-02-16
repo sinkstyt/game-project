@@ -49,4 +49,8 @@ describe("Player", () => {
     newPlayer.buyIronMaker();
     expect(newPlayer.inventory.get("Iron Maker")).toEqual(1);
   });
+
+  test("should return -1 if gold is less than 5", () => {
+    expect(newPlayer.buyIronMaker()).toEqual(-1);
+  });
 });
