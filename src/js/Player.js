@@ -21,6 +21,6 @@ export default class Player {
     }
   }
   buyIronMaker() {
-
+    this.gold -=5;
   }
 }
