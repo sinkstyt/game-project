@@ -45,4 +45,12 @@ describe("Player", () => {
     expect(newPlayer.iron).toBeGreaterThanOrEqual(1);
     expect(newPlayer.iron).toBeLessThanOrEqual(3);
   });
+
+  test("should increment player's gold by a random value between 1 and 3, both inclusive", () => {
+    newPlayer.venture();
+    expect(newPlayer.gold).toBeGreaterThanOrEqual(1);
+    expect(newPlayer.gold).toBeLessThanOrEqual(3);
+  });
+
+
 });

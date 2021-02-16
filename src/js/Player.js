@@ -17,11 +17,13 @@ export default class Player {
   }
   venture() {
     // this.roll = Math.floor(Math.random() * 3);
-    this.roll = 1;
+    this.roll = 2;
     if (this.roll === 0) {
       this.health -= Math.floor(Math.random() * 21);
     } else if (this.roll === 1) {
       this.iron += Math.floor(Math.random() * 3) +1;
+    } else {
+      // this.gold += Math.floor(Math.random() * 3) + 1;
     }
   }
 }
