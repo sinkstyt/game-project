@@ -43,4 +43,10 @@ describe("Player", () => {
     newPlayer.buyIronMaker();
     expect(newPlayer.gold).toEqual(2);
   });
+
+  test("should add iron maker to inventory", () => {
+    newPlayer.gold += 5;
+    newPlayer.buyIronMaker();
+    expect(newPlayer.inventory.get("Iron Maker")).toEqual(1);
+  });
 });

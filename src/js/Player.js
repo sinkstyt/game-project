@@ -5,7 +5,8 @@ export default class Player {
       [
         ["Weapons", []],
         ["Armor", []],
-        ["Craft Item", 0]
+        ["Craft Item", 0],
+        ["Iron Maker", 0]
       ]
     );
     this.gold = 2;
@@ -22,5 +23,6 @@ export default class Player {
   }
   buyIronMaker() {
     this.gold -=5;
+    this.inventory.set("Iron Maker", 1);
   }
 }
