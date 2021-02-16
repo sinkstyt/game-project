@@ -13,6 +13,6 @@ export default class Player {
     this.health = 100;
   }
   buyIron() {
-    
+    this.gold -= 3;
   }
 }
