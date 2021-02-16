@@ -59,4 +59,10 @@ describe("Player", () => {
     expect(newPlayer.iron).toBeGreaterThanOrEqual(1);
     expect(newPlayer.iron).toBeLessThanOrEqual(2);
   });
+
+  test("should subtract 3 gold from newPlayer.gold", () => {
+    newPlayer.gold += 2;
+    newPlayer.buyWelder();
+    expect(newPlayer.gold).toEqual(1);
+  });  
 });
