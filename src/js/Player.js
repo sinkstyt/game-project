@@ -11,8 +11,16 @@ export default class Player {
     this.gold = 2;
     this.iron = 0;
     this.health = 100;
+  }
+  constructPart() {
+    if (this.iron < 5) {
+      return -1;
+    } else {
+      this.iron -= 5;
+      let item = this.inventory.get("Craft Item");
+      item += 1;
+      this.inventory.set("Craft Item", item);
   } 
-
   venture() {
     let roll = Math.floor(Math.random() * 3);
     if (roll === 0) {
