@@ -54,5 +54,9 @@ describe("Player", () => {
     expect(newPlayer.buyIronMaker()).toEqual(-1);
   });
 
-  
+  test("should add 1-2 iron to this.iron", () => {
+    newPlayer.useIronMaker();
+    expect(newPlayer.iron).toBeGreaterThanOrEqual(1);
+    expect(newPlayer.iron).toBeLessThanOrEqual(2);
+  });
 });

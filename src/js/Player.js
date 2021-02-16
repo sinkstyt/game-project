@@ -30,6 +30,6 @@ export default class Player {
     }
   }
   useIronMaker() {
-    
+
   }
 }
