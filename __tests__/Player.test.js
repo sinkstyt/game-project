@@ -44,6 +44,7 @@ describe("Player", () => {
 
   test("should return -1 if iron is less than 5", () => {
     expect(newPlayer.constructPart()).toEqual(-1);
+  });
 
   test("should decrement player's health by a random value between 0 and 20, both inclusive", () => {
     let result = newPlayer.venture();
@@ -102,4 +103,3 @@ describe("Player", () => {
     expect(newPlayer.buyWelder()).toEqual(-1);
   });
 });
-
