@@ -11,19 +11,16 @@ export default class Player {
     this.gold = 2;
     this.iron = 0;
     this.health = 100;
-  }
-  buyIron() {
-    this.gold -= 3;
-  }
+  } 
+
   venture() {
-    // this.roll = Math.floor(Math.random() * 3);
-    this.roll = 2;
-    if (this.roll === 0) {
-      this.health -= Math.floor(Math.random() * 21);
-    } else if (this.roll === 1) {
-      this.iron += Math.floor(Math.random() * 3) +1;
+    let roll = Math.floor(Math.random() * 3);
+    if (roll === 0) {
+      return this.health -= Math.floor(Math.random() * 21);
+    } else if (roll === 1) {
+      return this.iron += Math.floor(Math.random() * 3) + 1;
     } else {
-      // this.gold += Math.floor(Math.random() * 3) + 1;
+      return this.gold += Math.floor(Math.random() * 3) + 1;
     }
   }
 }

@@ -22,35 +22,21 @@ describe("Player", () => {
     expect(newPlayer.health).toEqual(100);
   });
 
-  test("should subtract 3 gold when iron purchase is called", () => {
-    newPlayer.gold += 2;
-    newPlayer.buyIron();
-    expect(newPlayer.gold).toEqual(1);
-  });
-
-  test("should determine dice roll between 0 and 2, bounds included", () => {
-    newPlayer.venture();
-    expect(newPlayer.roll).toBeGreaterThanOrEqual(0);
-    expect(newPlayer.roll).toBeLessThanOrEqual(2);
-  });
-
   test("should decrement player's health by a random value between 0 and 20, both inclusive", () => {
-    newPlayer.venture();
+    let result = newPlayer.venture();
+    while(result < 80) {
+      result = newPlayer.venture();
+    } 
     expect(newPlayer.health).toBeGreaterThanOrEqual(80);
     expect(newPlayer.health).toBeLessThanOrEqual(100);
   });
 
-  test("should increment player's iron by a random value between 1 and 3, both inclusive", () => {
+  test("should increment player's iron by a random value between 1 and 3, both inclusive. OR, should increment player's gold by a random value between 1 and 3, both inclusive. OR, should increment player's gold by a random value between 1 and 3, both inclusive", () => {
     newPlayer.venture();
-    expect(newPlayer.iron).toBeGreaterThanOrEqual(1);
+    expect(newPlayer.iron).toBeGreaterThanOrEqual(0);
     expect(newPlayer.iron).toBeLessThanOrEqual(3);
+    expect(newPlayer.gold).toBeGreaterThanOrEqual(2);
+    expect(newPlayer.gold).toBeLessThanOrEqual(5);
   });
-
-  test("should increment player's gold by a random value between 1 and 3, both inclusive", () => {
-    newPlayer.venture();
-    expect(newPlayer.gold).toBeGreaterThanOrEqual(1);
-    expect(newPlayer.gold).toBeLessThanOrEqual(3);
-  });
-
-
+  
 });
