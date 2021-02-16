@@ -33,6 +33,6 @@ export default class Player {
     this.iron += Math.floor(Math.random() * 2) + 1;
   }
   buyWelder() {
-    
+    this.gold -= 3;
   }
 }
