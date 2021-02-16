@@ -14,5 +14,6 @@ export default class Player {
   }
   buyIron() {
     this.gold -= 3;
+    this.iron++;
   }
 }
