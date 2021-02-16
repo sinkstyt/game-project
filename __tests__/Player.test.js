@@ -34,5 +34,8 @@ describe("Player", () => {
     expect(newPlayer.inventory.get("Craft Item")).toEqual(1);
   });
 
+  test("should return -1 if iron is less than 5", () => {
+    expect(newPlayer.constructPart()).toEqual(-1);
+  });
 
 });
