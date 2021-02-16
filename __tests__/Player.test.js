@@ -64,5 +64,11 @@ describe("Player", () => {
     newPlayer.gold += 2;
     newPlayer.buyWelder();
     expect(newPlayer.gold).toEqual(1);
-  });  
+  });
+
+  test("should add 1 to the value stored at inventory.get('Welder')", () => {
+    newPlayer.gold += 2;
+    newPlayer.buyWelder();
+    expect(newPlayer.inventory.get("Welder")).toEqual(1);
+  });
 });
