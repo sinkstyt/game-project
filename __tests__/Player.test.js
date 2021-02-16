@@ -27,4 +27,16 @@ describe("Player", () => {
     newPlayer.buyIron();
     expect(newPlayer.gold).toEqual(1);
   });
+
+  test("should determine dice roll between 0 and 2, bounds included", () => {
+    newPlayer.venture();
+    expect(newPlayer.roll).toBeGreaterThanOrEqual(0);
+    expect(newPlayer.roll).toBeLessThanOrEqual(2);
+  });
+
+  // test("should increment player's iron by a random value between 1 and 3, both inclusive", () => {
+  //   newPlayer.venture();
+  //   expect(newPlayer.iron).toBeGreaterThanOrEqual(1);
+  //   expect(newPlayer.iron).toBeLessThanOrEqual(3);
+  // });
 });
