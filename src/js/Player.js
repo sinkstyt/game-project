@@ -34,5 +34,6 @@ export default class Player {
   }
   buyWelder() {
     this.gold -= 3;
+    this.inventory.set("Welder", 1);
   }
 }

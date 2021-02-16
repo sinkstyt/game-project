@@ -62,7 +62,7 @@ describe("Player", () => {
 
   test("should subtract 3 gold from newPlayer.gold", () => {
     newPlayer.gold += 2;
-    newPlayer.buyWelder();
+    newPlayer.buyWelder();,
     expect(newPlayer.gold).toEqual(1);
   });
 
