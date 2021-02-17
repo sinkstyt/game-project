@@ -1,10 +1,10 @@
 import {win, lose} from "./endGameDisplay.js";
 
 export default class Game {
-  constructor(player, numTurns = 0) {
-    this.player = player;
+  constructor(playerObj= 0) {
+    this.player = playerObj;
     this.isGameOver = "";
-    this.numTurns = numTurns;
+    this.numTurns = 0;
   }
 
   endTurn() {

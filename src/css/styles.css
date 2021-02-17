@@ -1,3 +1,17 @@
+.jumbotron {
+  text-align: center;
+}
+ul {
+  list-style-type: none;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+
 .mainGame, .followUp{
   display: none;
 }
@@ -6,4 +20,5 @@
   border: 2px groove black;
   padding: 10px;
   text-align: center;
+
 }

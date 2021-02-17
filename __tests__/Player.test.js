@@ -11,6 +11,7 @@ describe("Player", () => {
     expect(newPlayer.name).toEqual("Gaston");
   });
 
+
   test("should return a new instance of Player with keys inventory, gold, and iron assigned to a map with keys 'Weapon' and 'Armor', 2, and 0 respectively", () => {
     expect(newPlayer.inventory.has("Weapons")).toEqual(true);
     expect(newPlayer.inventory.has("Armor")).toEqual(true);
@@ -32,18 +33,20 @@ describe("Player", () => {
   
   test("should subtract 5 iron from newPlayer.iron", () => {
     newPlayer.iron += 7;
+    newPlayer.inventory.set("Welder", 1);
     newPlayer.constructPart();
     expect(newPlayer.iron).toEqual(2);
   });
 
   test("should create 1 space part", () => {
     newPlayer.iron += 7;
+    newPlayer.inventory.set("Welder", 1);
     newPlayer.constructPart();
     expect(newPlayer.inventory.get("Craft Item")).toEqual(1);
   });
 
-  test("should return -1 if iron is less than 5", () => {
-    expect(newPlayer.constructPart()).toEqual(-1);
+  test("should return return false if no `Welder` appears in inventory", () => {
+    expect(newPlayer.constructPart()).toEqual(false);
   });
 
   test("should decrement player's health by a random value between 0 and 20, both inclusive", () => {

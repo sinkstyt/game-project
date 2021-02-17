@@ -30,8 +30,16 @@ describe("Game", () => {
     expect(newGame.endGame()).toEqual('win');
   });
 
-  test("Should return number of turns incremented by 1 and have the iron maker produce random iron from 1 - 3 if obtained.", () => {
-    newGame.numTurns = 1;
+  test("Should return number of turns incremented by 1", () => {
+    newGame.numTurns = 0;
     expect(newGame.endTurn()).toEqual(1);
+  });
+
+  test("should increment iron by 1, 2, or 3 if inventory includes `Iron Maker`", () => {
+    player1.inventory.set("Iron Maker", 1);
+    player1.iron = 12;
+    newGame.endTurn();
+    expect(player1.iron).toBeGreaterThanOrEqual(13);
+    expect(player1.iron).toBeLessThanOrEqual(15);
   });
 }); 
