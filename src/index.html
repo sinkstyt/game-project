@@ -2,24 +2,57 @@
   <head>
   </head>
   <body>
+    <div class="container">
+      <div class="startPage">
+        <div class="form-group">
+          <h2>Welcome to Planet Escape</h2>
+          <p>You are are a space marine stranded on an unknown planet. Your ship had a major malfunction. You now have to make like Matt Damon and science your way out of this situation</p>
+          <p>You have 20 days to repair 3 space parts. You will need to collect iron to collect in order to repair those parts. You will also need to buy a welder to make the space parts. Use your days wisely, as you will only be able to do one thing every day.</p>
+          <ul>
+            <li>Go on an adventure (returns iron and gold)</li>
+            <li>Go to Space Shop (spend gold to purchase tools)</li>
+            <li>Construct Space Part</li>
+          </ul>
 
-    <div class="modal" tabindex="-1" id="end-game-popup">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p>Modal body text goes here.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+          <label for="userName">Player Name:</label>
+          <input id="userName" class="form-control" type="text" value="Nat Raymond">
+          <small id="nameHelp" class="form-text text-muted">Enter your name here</small>
+          <button type="button" class="btn btn-outline-secondary beginButton">Begin Game</button>
+        </div>
+      </div>
+      <div class="followUp">
+        <div id="followUpText"></div>
+        <button type="button" class="btn btn-outline-secondary continueButton">Continue</button>
+      </div>
+      <div class="mainGame">
+
+        <h1>main menu</1>
+
+
+        <div class="modal" tabindex="-1" id="end-game-popup">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>Modal body text goes here.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
           </div>
         </div>
+
+
+
+
+
       </div>
     </div>
   </body>
