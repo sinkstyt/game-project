@@ -5,6 +5,12 @@ export default class Game {
     this.numTurns = numTurns;
   }
 
+  endTurn() {
+    this.numTurns++;
+    this.player.inventory.has("Iron Maker") && this.player.userIronMaker();
+    return this.numTurns;
+  }
+
   endGame() {
     if (this.player.health <= 0 || (this.numTurns === 20 && this.player.inventory.get("Craft Item") < 3)) {
       this.isGameOver = "lose";
@@ -16,11 +22,5 @@ export default class Game {
     return this.isGameOver;
   }
 
-  endTurn() {
-    if(this.endGame() === "continue"){
-      this.numTurns++;
-      this.player.inventory.has("Iron Maker") && this.player.userIronMaker();
-    }
-    return this.numTurns;
-  }
+
 }
