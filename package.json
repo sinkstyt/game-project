@@ -1,11 +1,12 @@
 {
-  "name": "roguelike-sim-rpg",
+  "name": "planet-escape",
   "version": "1.0.0",
   "description": "text-based rpg game",
   "main": "main.js",
   "scripts": {
     "build": "webpack --mode development",
-    "start": "npm run build & webpack-dev-server --open --mode development",
+    "start": "npm run build; webpack-dev-server --open --mode development",
+    "startwin": "npm run build & webpack-dev-server --open --mode development",
     "lint": "eslint src/*.js",
     "test": "jest --coverage"
   },
@@ -16,7 +17,7 @@
     ]
   },
   "keywords": [],
-  "author": "Tyler Sinks",
+  "author": "Tyler Sinks, Morgan Bradford, Tien Nguyen, Logan Roth",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.6.4",

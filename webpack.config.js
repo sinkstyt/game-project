@@ -17,7 +17,7 @@ module.exports = {
     new Dotenv(),
     new CleanWebpackPlugin(), 
     new HtmlWebpackPlugin({
-      title: 'Giphy Grabber',
+      title: 'Space Escape',
       template: './src/index.html',
       inject: 'body'
     })
