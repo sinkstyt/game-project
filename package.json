@@ -11,10 +11,12 @@
   },
   "jest": {
     "collectCoverage": true,
-    "coverageReporters": ["html"]
+    "coverageReporters": [
+      "html"
+    ]
   },
   "keywords": [],
-  "author": "Tyler Sinks",
+  "author": "Morgan Bradford, Logan Roth, Tien Nguyen, Tyler Sinks",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.6.4",
