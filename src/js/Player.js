@@ -39,13 +39,18 @@ export default class Player {
     this.inventory.set("Welder", 1);
   }
   constructPart() {
-    if (this.iron < 5) {
-      return -1;
+    if(this.inventory.has("Welder")) {
+      if (this.iron < 5) {
+        return -1;
+      } else {
+        this.iron -= 5;
+        let item = this.inventory.get("Craft Item");
+        item += 1;
+        this.inventory.set("Craft Item", item);
+        return true;
+      }
     } else {
-      this.iron -= 5;
-      let item = this.inventory.get("Craft Item");
-      item += 1;
-      this.inventory.set("Craft Item", item);
+      return false;
     }
   } 
   venture() {

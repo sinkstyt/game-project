@@ -11,6 +11,7 @@ describe("Player", () => {
     expect(newPlayer.name).toEqual("Gaston");
   });
 
+
   test("should return a new instance of Player with keys inventory, gold, and iron assigned to a map with keys 'Weapon' and 'Armor', 2, and 0 respectively", () => {
     expect(newPlayer.inventory.has("Weapons")).toEqual(true);
     expect(newPlayer.inventory.has("Armor")).toEqual(true);

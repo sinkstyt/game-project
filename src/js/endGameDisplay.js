@@ -1,8 +1,8 @@
 import $ from "jquery";
 
 export function win(numTurns) {
-    $(".modal-title").text("Congratulations! You won!");
-    $(".modal-body").text(`Thanks for playing. You beat the game in ${numTurns} number of turns! Please click the 'Play Again' button to restart.`);
+  $(".modal-title").text("Congratulations! You won!");
+  $(".modal-body").text(`Thanks for playing. You beat the game in ${numTurns} number of turns! Please click the 'Play Again' button to restart.`);
 }
 
 export function lose() {
