@@ -15,5 +15,12 @@ export default class Game {
     }
     return this.isGameOver;
   }
-}
 
+  endTurn() {
+    if(this.endGame() === "continue"){
+      this.numTurns++;
+      this.player.inventory.has("Iron Maker") && this.player.userIronMaker();
+    }
+    return this.numTurns;
+  }
+}
