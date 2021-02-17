@@ -1,6 +1,6 @@
 export default class Game {
-  constructor(player, numTurns = 0) {
-    this.player = player;
+  constructor(playerObj, numTurns = 0) {
+    this.player = playerObj;
     this.isGameOver = "";
     this.numTurns = numTurns;
   }
