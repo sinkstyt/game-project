@@ -9,7 +9,7 @@ export default class Game {
 
   endTurn() {
     this.numTurns++;
-    this.player.inventory.has("Iron Maker") && this.player.userIronMaker();
+    this.player.inventory.has("Iron Maker") && this.player.useIronMaker();
     return this.numTurns;
   }
 
@@ -24,7 +24,6 @@ export default class Game {
       this.isGameOver = "continue"; 
       this.endTurn();
     }
-
     return this.isGameOver;
   }
 }
