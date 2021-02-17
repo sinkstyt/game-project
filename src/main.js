@@ -58,6 +58,7 @@ $(document).ready(function() {
   updateInventory(player1.inventory);
 
   $('#venture').on("click", function() {
+    headerInformation("Adventuring", game1.numTurns, player1.inventory.get("Craft Item"));
     player1.venture();
     updateAllStats(player1.health, player1.gold, player1.iron);
     $("#build-msg").empty();
