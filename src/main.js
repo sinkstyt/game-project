@@ -44,18 +44,28 @@ const construction = (constructPart) => {
   $("#build-msg").attr("class", color);
 };
 
+const buy = (value, buyWelder, buyIron, buyIronMaker) => {
+  if(value === "Welder") {
+    buyWelder();
+  } else if (value === "Iron") {
+    buyIron();
+  } else if (value === "Iron Maker") {
+    buyIronMaker();
+  }
+};
+
 $(document).ready(function() {
-  let player1 = new Player("Nat Raymond")
-  let game1 = new Game(player1)
+  let player1 = new Player("Nat Raymond");
+  let game1 = new Game(player1);
   $(".beginButton").click(function(){
-    $(".startPage").hide()
-    $(".followUp").show()
+    $(".startPage").hide();
+    $(".followUp").show();
     player1.name = $("#userName").val();
-    $("#followUpText").prepend(`Good Luck ${player1.name}. You have 20 days left.`)
-  })
+    $("#followUpText").prepend(`Good Luck ${player1.name}. You have 20 days left.`);
+  });
   $(".continueButton").click(function(){
     $(".followUp").hide();
-    $(".mainGame").show();
+    $(".main").show();
   });
   headerInformation("Main Menu", game1.numTurns, player1.inventory.get("Craft Item"));
 
@@ -68,18 +78,22 @@ $(document).ready(function() {
     player1.venture();
     updateAllStats(player1.health, player1.gold, player1.iron);
     $("#build-msg").empty();
+    game1.endGame();
     // clearAdventureResults();
     // displayAdventureResults();
   });
   $('#shop').on("click", function() {
     // mainMenu.hide();
     $("#build-msg").empty();
+    $(".shop-container").toggle();
   });
-  $('#buy').on("click", function() {
-    $("#build-msg").empty();
+  $('#buy').on("click", function(){
+    
   });
   $('#build').on("click", function() {
-    
-    construction(player1.constructPart());
+    let constructResult = player1.constructPart();
+    construction(constructResult);
+    constructResult && game1.endGame();
+    $(".shop-container").hide();
   });
 });

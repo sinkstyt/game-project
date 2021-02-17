@@ -11,8 +11,9 @@ ul {
 
 .red {
   color: red;
+}
 
-.mainGame, .followUp{
+.main, .followUp{
   display: none;
 }
 .startPage, .followUp{
@@ -20,5 +21,8 @@ ul {
   border: 2px groove black;
   padding: 10px;
   text-align: center;
+}
 
+.shop-container {
+  display: none;
 }
