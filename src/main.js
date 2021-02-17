@@ -5,7 +5,6 @@ import './css/styles.css';
 import Game from './js/game.js';
 import Player from './js/Player.js';
 
-
 const updateHealth = health => $("#health").text(`Health: ${health}`);
 const updateGold = gold => $("#gold").text(`Gold: ${gold}`);
 const updateIron = iron => $("#iron").text(`Iron: ${iron}`);
@@ -46,11 +45,18 @@ const construction = (constructPart) => {
 };
 
 $(document).ready(function() {
-  // START PAGE KANBAN captures userName
-  
-  let player1 = new Player("Alexi");
-  let game1 = new Game(player1);
-
+  let player1 = new Player("Nat Raymond")
+  let game1 = new Game(player1)
+  $(".beginButton").click(function(){
+    $(".startPage").hide()
+    $(".followUp").show()
+    player1.name = $("#userName").val();
+    $("#followUpText").prepend(`Good Luck ${player1.name}. You have 20 days left.`)
+  })
+  $(".continueButton").click(function(){
+    $(".followUp").hide();
+    $(".mainGame").show();
+  });
   headerInformation("Main Menu", game1.numTurns, player1.inventory.get("Craft Item"));
 
   $("#name").text(player1.name);

@@ -5,12 +5,26 @@
 </head>
 <body>
   <div class="container">
-  <!-- START PAGE CARD from Projects pane -->
-  <!-- Title / Greeting / Landing page with a push start functionality. This div disappears on START click. -->
-
-  <!-- Description of game. Objectives. Player enters name. -->
-
-  <!-- Start of Turn: Main Menu -->
+      <div class="startPage">
+        <div class="form-group">
+          <h2>Welcome to Planet Escape</h2>
+          <p>You are are a space marine stranded on an unknown planet. Your ship had a major malfunction. You now have to make like Matt Damon and science your way out of this situation</p>
+          <p>You have 20 days to repair 3 space parts. You will need to collect iron to collect in order to repair those parts. You will also need to buy a welder to make the space parts. Use your days wisely, as you will only be able to do one thing every day.</p>
+          <ul>
+            <li>Go on an adventure (returns iron and gold)</li>
+            <li>Go to Space Shop (spend gold to purchase tools)</li>
+            <li>Construct Space Part</li>
+          </ul>
+          <label for="userName">Player Name:</label>
+          <input id="userName" class="form-control" type="text" value="Nat Raymond">
+          <small id="nameHelp" class="form-text text-muted">Enter your name here</small>
+          <button type="button" class="btn btn-outline-secondary beginButton">Begin Game</button>
+        </div>
+      </div>
+      <div class="followUp">
+        <div id="followUpText"></div>
+        <button type="button" class="btn btn-outline-secondary continueButton">Continue</button>
+      </div>
     <div class="main">
       <div class="jumbotron">
         <h1><span id="screen-name">Main Menu</span>: Day <span class="turn-display"> <!-- turn number / days count --> </span></h1>
