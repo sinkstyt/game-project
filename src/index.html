@@ -13,7 +13,7 @@
   <!-- Start of Turn: Main Menu -->
     <div class="main">
       <div class="jumbotron">
-        <h1>Main Menu: Day <span class="turn-display"> <!-- turn number / days count --> </span></h1>
+        <h1><span id="screen-name">Main Menu</span>: Day <span class="turn-display"> <!-- turn number / days count --> </span></h1>
         <ul>
           <li id="days-remain">Days Remaining: 4</li>
           <li id="parts-built">Space Craft Parts Built: 2</li>
@@ -22,13 +22,11 @@
       <div class="row">
         <div class="col-md-3">
           <ul class="all-stats">
-            <li>name</li>
-            <li>health</li>
-            <li>gold</li>
-            <li>iron</li>
-            <li>inventory.get("Welder")</li>
-            <li>inventory.get("Iron Maker")</li>
-            <li>inventory.get("Craft Item")</li>
+            <li id="name">name</li>
+            <li id="health">health</li>
+            <li id="gold">gold</li>
+            <li id="iron">iron</li>
+            <ul id="inventory"></ul>
           </ul>
         </div>
         <div class="play-options col-md-6">
@@ -38,6 +36,26 @@
           <button id="shop">Shop</button>
           <h2 class="main-play-label">Use Welder And Iron to Build a Stage of Your Craft</h2>
           <button id="build">Build</button>
+          <h3 id="build-msg"></h3>
+        </div>
+      </div>
+    </div>
+    <div class="modal" tabindex="-1" id="end-game-popup">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
         </div>
       </div>
     </div>

@@ -6,7 +6,6 @@ export default class Player {
         ["Weapons", []],
         ["Armor", []],
         ["Craft Item", 0],
-        ["Iron Maker", 0]
       ]
     );
     this.gold = 2;
@@ -59,4 +58,5 @@ export default class Player {
       return this.gold += Math.floor(Math.random() * 3) + 1;
     }
   }
+
 }
