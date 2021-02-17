@@ -30,7 +30,7 @@ describe("Game", () => {
     expect(newGame.endGame()).toEqual('win');
   });
 
-  test("Should return number of turns incremented by 1 and havce the iron maker produce random iron from 1 - 3 if obtained.", () => {
+  test("Should return number of turns incremented by 1 and have the iron maker produce random iron from 1 - 3 if obtained.", () => {
     newGame.numTurns = 1;
     expect(newGame.endTurn()).toEqual(1);
   });
