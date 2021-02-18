@@ -80,13 +80,13 @@ const resetPlayer = (player) => {
   player.gold = 2;
   player.iron = 0;
   player.health = 100;
-}
+};
 
 const resetGame = (game, player) => {
   game.player = player;
   game.isGameOver = "";
   game.numTurns = 0;
-}
+};
 
 const startGame = (player1) => {
 
@@ -104,7 +104,7 @@ const startGame = (player1) => {
     $(".followUp").hide();
     $(".main").show();
   });
-}
+};
 
 $(document).ready(function() {
   let player1 = new Player("Nat Raymond");
@@ -157,5 +157,5 @@ $(document).ready(function() {
     $("#name").text(player1.name);
     updateAllStats(player1.health, player1.gold, player1.iron);
     updateInventory(player1.inventory);
-  })
+  });
 });
