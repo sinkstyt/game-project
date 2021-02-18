@@ -29,25 +29,20 @@ const updateInventory = (inventory) => {
   });
 };
 
-const construction = (constructPart, player) => {
+const buyMsg = (constructPart) => {
   let msg = "";
   let color = "red";
   let result = false;
-
-  if(player.iron < 5) {
-    msg = "You can't build with less than 5 iron, please select another option!";
-    result = false;
-  }
 
   if(constructPart) {
     msg = "You have successfully built a Space Craft Part!";
     color = "green";
     result = true;
+  } else if(constructPart === -1){
+    msg = "You can't build with less than 5 iron, please select another option!";
   } else if (!constructPart) {
     msg = "You can't build without a welder, please select another option!";
-  } else {
-    msg = "You can't build with less than 5 iron, please select another option!";
-  }
+  } 
   $("#eventStuff").text(msg);
   $("#eventStuff").attr("class", color);
   return result;
@@ -135,8 +130,13 @@ $(document).ready(function() {
   });
   $('#build').on("click", function() {
     let constructResult = player1.constructPart();
-    construction(constructResult, player1);
+
+    buyMsg(constructResult);
     player1.inventory.get("Welder") !== 1 && player1.inventory.get("Iron Maker") !== 1 && constructResult && game1.endGame();
+    if(constructResult === (-1)) {
+      $("#eventStuff").text("You can't build with less than 5 iron, please select another option!");
+      $("#eventStuff").attr("class", "red");
+    }
 
     updateInventory(player1.inventory);
     updateIron(player1.iron);
