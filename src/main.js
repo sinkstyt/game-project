@@ -30,6 +30,7 @@ const updateInventory = (inventory) => {
 };
 
 const construction = (constructPart) => {
+  // add update inventory
   let msg = "";
   let color = "red";
   if(constructPart) {
@@ -40,8 +41,8 @@ const construction = (constructPart) => {
   } else {
     msg = "You can't build with less than 5 iron, please select another option!";
   }
-  $("#build-msg").text(msg);
-  $("#build-msg").attr("class", color);
+  $("#eventStuff").text(msg);
+  $("#eventStuff").attr("class", color);
 };
 
 const buy = (player1, itemBuying, game1) => {
@@ -52,12 +53,13 @@ const buy = (player1, itemBuying, game1) => {
   };
 
   if((store[itemBuying])() === -1) {
-    $("#shop-msg").attr("class", "red");
-    $("#shop-msg").text("You don't have enough gold to purchase that item!");
+    $("#eventStuff").attr("class", "red");
+    $("#eventStuff").text("You don't have enough gold to purchase that item!");
     return -1;
   } else {
-    $("#shop-msg").text(`You have purchased: ${itemBuying}!`);
-    $("#shop-msg").attr("class", "green");
+    // $("#eventStuff").empty();
+    $("#eventStuff").text(`You have purchased: ${itemBuying}!`);
+    $("#eventStuff").attr("class", "green");
     updateAllStats(player1.health, player1.gold, player1.iron);
     headerInformation("Adventuring", game1.numTurns, player1.inventory.get("Craft Item"));
     updateInventory(player1.inventory);
@@ -84,19 +86,17 @@ $(document).ready(function() {
   updateInventory(player1.inventory);
 
   $('#venture').on("click", function() {
-    player1.venture();
+    let msg = player1.venture();
+    console.log(msg);
     headerInformation("Adventuring", game1.numTurns, player1.inventory.get("Craft Item"));
     updateAllStats(player1.health, player1.gold, player1.iron);
-    $("#build-msg").empty();
     game1.endGame();
     $(".shop-container").hide();
-    $("#shop-msg").text("");
-    // clearAdventureResults();
-    // displayAdventureResults();
+    $("#eventStuff").attr("class", "blue");
+    $("#eventStuff").text(msg);
   });
   $('#shop').on("click", function() {
     // mainMenu.hide();
-    $("#build-msg").empty();
     $(".shop-container").toggle();
   });
   $('#build').on("click", function() {
@@ -104,7 +104,6 @@ $(document).ready(function() {
     construction(constructResult);
     constructResult && game1.endGame();
     $(".shop-container").hide();
-    $("#shop-msg").text("");
   });
   $(".shopItem").click((event)=> {
     buy(player1, $(event.target).val(), game1);

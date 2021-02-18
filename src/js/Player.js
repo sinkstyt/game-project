@@ -56,11 +56,14 @@ export default class Player {
   venture() {
     let roll = Math.floor(Math.random() * 3);
     if (roll === 0) {
-      return this.health -= Math.floor(Math.random() * 21);
+      this.health -= Math.floor(Math.random() * 21);
+      return "You've had a rough day. Unfortunately, you weren't able to find much";
     } else if (roll === 1) {
-      return this.iron += Math.floor(Math.random() * 3) + 1;
+      this.iron += Math.floor(Math.random() * 3) + 1;
+      return "Success! You've found a crashed meteor with an iron repository."
     } else {
-      return this.gold += Math.floor(Math.random() * 3) + 1;
+      this.gold += Math.floor(Math.random() * 3) + 1;
+      return "Success! You've found a cave with gold inside."
     }
   }
 

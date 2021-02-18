@@ -4,7 +4,9 @@
 ul {
   list-style-type: none;
 }
-
+.blue{
+  color: blue;
+}
 .green {
   color: green;
 }
@@ -24,6 +26,17 @@ ul {
 }
 
 .shop-container {
+  display: none;
+  margin-top: 10px;
+  padding: 10px;
+  border: 2px groove grey;
+}
+.updateScreen{
+  text-align: center;
+  border: 2px groove grey;
+  margin-bottom: 10px;
+}
+.adventures{
   display: none;
   margin-top: 10px;
   padding: 10px;
