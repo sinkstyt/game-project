@@ -44,6 +44,7 @@ const buyMsg = (constructPart) => {
     msg = "You can't build without a welder, please select another option!";
   } 
   $("#eventStuff").text(msg);
+  $(".logList").prepend(`<li class="logMSG">${msg}</li>`);
   $("#eventStuff").attr("class", color);
   return result;
 };
@@ -62,6 +63,7 @@ const buy = (player1, itemBuying, game1) => {
   } else {
     // $("#eventStuff").empty();
     $("#eventStuff").text(`You have purchased: ${itemBuying}!`);
+    $(".logList").prepend(`<li class="logMSG">You have purchased: ${itemBuying}!</li>`);
     $("#eventStuff").attr("class", "green");
     updateAllStats(player1.health, player1.gold, player1.iron);
     headerInformation("Adventuring", game1.numTurns, player1.inventory.get("Craft Item"));
@@ -104,6 +106,7 @@ const startGame = (player1) => {
     $(".followUp").hide();
     $(".main").show();
   });
+  $(".logList").empty();
 };
 
 $(document).ready(function() {
@@ -124,6 +127,7 @@ $(document).ready(function() {
     $(".shop-container").hide();
     $("#eventStuff").attr("class", "blue");
     $("#eventStuff").text(msg);
+    $(".logList").prepend(`<li class="logMSG">${msg}</li>`);
   });  
   $('#shop').on("click", function() {
     $(".shop-container").toggle();
