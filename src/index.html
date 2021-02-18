@@ -48,13 +48,14 @@
           <button id="venture">Adventure</button>
           <h2 class="main-play-label">Spend Your Gold</h2>
           <button id="shop">Shop</button>
+          <h3 id="shop-msg"></h3>
           <h2 class="main-play-label">Use Welder And Iron to Build a Stage of Your Craft</h2>
           <button id="build">Build</button>
           <h3 id="build-msg"></h3>
         </div>
       </div>
     </div>
-    <div class="modal" tabindex="-1" id="end-game-popup">
+    <div class="modal" tabindex="-1" id="end-game-popup" data-backdrop="static" data-keyboard="false">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -77,12 +78,13 @@
   <div class="container shop-container">
     <div class="row">
       <div class="col-sm-4">
-        <button type="click" value="Welder">Welder: 5 Gold</button>
-      </div>
-        <button type="click" value="Iron">Iron: 3 Gold</button>
+        <button type="click" value="Welder" class="shopItem">Welder: 3 Gold</button>
       </div>
       <div class="col-sm-4">
-        <button type="click" value="Iron Maker">Iron Maker: 4 Gold</button>
+        <button type="click" value="Iron" id="iron" class="shopItem">Iron: 3 Gold</button>
+      </div>
+      <div class="col-sm-4">
+        <button type="click" value="Iron Maker" id="ironMaker" class="shopItem">Iron Maker: 5 Gold</button>
       </div>
     </div>
   </div>
