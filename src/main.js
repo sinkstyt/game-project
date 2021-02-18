@@ -44,18 +44,38 @@ const construction = (constructPart) => {
   $("#build-msg").attr("class", color);
 };
 
+const buy = (player1, itemBuying, game1) => {
+  const store = {
+    'Welder': () => player1.buyWelder(),
+    'Iron': () => player1.buyIron(),
+    'Iron Maker': () => player1.buyIronMaker(),
+  };
+
+  if((store[itemBuying])() === -1) {
+    $("#shop-msg").attr("class", "red");
+    $("#shop-msg").text("You don't have enough gold to purchase that item!");
+    return -1;
+  } else {
+    $("#shop-msg").text(`You have purchased: ${itemBuying}!`);
+    $("#shop-msg").attr("class", "green");
+    updateAllStats(player1.health, player1.gold, player1.iron);
+    headerInformation("Adventuring", game1.numTurns, player1.inventory.get("Craft Item"));
+    updateInventory(player1.inventory);
+  }
+};
+
 $(document).ready(function() {
-  let player1 = new Player("Nat Raymond")
-  let game1 = new Game(player1)
+  let player1 = new Player("Nat Raymond");
+  let game1 = new Game(player1);
   $(".beginButton").click(function(){
-    $(".startPage").hide()
-    $(".followUp").show()
+    $(".startPage").hide();
+    $(".followUp").show();
     player1.name = $("#userName").val();
-    $("#followUpText").prepend(`Good Luck ${player1.name}. You have 20 days left.`)
-  })
+    $("#followUpText").prepend(`Good Luck ${player1.name}. You have 20 days left.`);
+  });
   $(".continueButton").click(function(){
     $(".followUp").hide();
-    $(".mainGame").show();
+    $(".main").show();
   });
   headerInformation("Main Menu", game1.numTurns, player1.inventory.get("Craft Item"));
 
@@ -64,22 +84,29 @@ $(document).ready(function() {
   updateInventory(player1.inventory);
 
   $('#venture').on("click", function() {
-    headerInformation("Adventuring", game1.numTurns, player1.inventory.get("Craft Item"));
     player1.venture();
+    headerInformation("Adventuring", game1.numTurns, player1.inventory.get("Craft Item"));
     updateAllStats(player1.health, player1.gold, player1.iron);
     $("#build-msg").empty();
+    game1.endGame();
+    $(".shop-container").hide();
+    $("#shop-msg").text("");
     // clearAdventureResults();
     // displayAdventureResults();
   });
   $('#shop').on("click", function() {
     // mainMenu.hide();
     $("#build-msg").empty();
-  });
-  $('#buy').on("click", function() {
-    $("#build-msg").empty();
+    $(".shop-container").toggle();
   });
   $('#build').on("click", function() {
-    
-    construction(player1.constructPart());
+    let constructResult = player1.constructPart();
+    construction(constructResult);
+    constructResult && game1.endGame();
+    $(".shop-container").hide();
+    $("#shop-msg").text("");
+  });
+  $(".shopItem").click((event)=> {
+    buy(player1, $(event.target).val(), game1);
   });
 });

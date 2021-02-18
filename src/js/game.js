@@ -1,7 +1,7 @@
-import {win, lose} from "./endGameDisplay.js";
+import {win, lose, showModal} from "./endGameDisplay.js";
 
 export default class Game {
-  constructor(playerObj= 0) {
+  constructor(playerObj) {
     this.player = playerObj;
     this.isGameOver = "";
     this.numTurns = 0;
@@ -17,9 +17,11 @@ export default class Game {
     if (this.player.health <= 0 || (this.numTurns === 20 && this.player.inventory.get("Craft Item") < 3)) {
       this.isGameOver = "lose";
       lose();
+      showModal();
     } else if (this.player.inventory.get("Craft Item") === 3) {
       this.isGameOver = "win";
       win(this.numTurns);
+      showModal();
     } else {
       this.isGameOver = "continue"; 
       this.endTurn();

@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <title>Best RPG Ever</title>
+  <title>Planet Escape</title>
 </head>
 <body>
   <div class="container">
-      <div class="startPage">
-        <div class="form-group">
-          <h2>Welcome to Planet Escape</h2>
-          <p>You are are a space marine stranded on an unknown planet. Your ship had a major malfunction. You now have to make like Matt Damon and science your way out of this situation</p>
-          <p>You have 20 days to repair 3 space parts. You will need to collect iron to collect in order to repair those parts. You will also need to buy a welder to make the space parts. Use your days wisely, as you will only be able to do one thing every day.</p>
-          <ul>
-            <li>Go on an adventure (returns iron and gold)</li>
-            <li>Go to Space Shop (spend gold to purchase tools)</li>
-            <li>Construct Space Part</li>
-          </ul>
-          <label for="userName">Player Name:</label>
-          <input id="userName" class="form-control" type="text" value="Nat Raymond">
-          <small id="nameHelp" class="form-text text-muted">Enter your name here</small>
-          <button type="button" class="btn btn-outline-secondary beginButton">Begin Game</button>
-        </div>
+    <div class="startPage">
+      <div class="form-group">
+        <h2>Welcome to Planet Escape</h2>
+        <p>You are are a space marine stranded on an unknown planet. Your ship had a major malfunction. You now have to make like Matt Damon and science your way out of this situation</p>
+        <p>You have 20 days to repair 3 space parts. You will need to collect iron to collect in order to repair those parts. You will also need to buy a welder to make the space parts. Use your days wisely, as you will only be able to do one thing every day.</p>
+        <ul>
+          <li>Go on an adventure (returns iron and gold)</li>
+          <li>Go to Space Shop (spend gold to purchase tools)</li>
+          <li>Construct Space Part</li>
+        </ul>
+        <label for="userName">Player Name:</label>
+        <input id="userName" class="form-control" type="text" value="Nat Raymond">
+        <small id="nameHelp" class="form-text text-muted">Enter your name here</small>
+        <button type="button" class="btn btn-outline-secondary beginButton">Begin Game</button>
       </div>
-      <div class="followUp">
-        <div id="followUpText"></div>
-        <button type="button" class="btn btn-outline-secondary continueButton">Continue</button>
-      </div>
+    </div>
+    <div class="followUp">
+      <div id="followUpText"></div>
+      <button type="button" class="btn btn-outline-secondary continueButton">Continue</button>
+    </div>
     <div class="main">
       <div class="jumbotron">
-        <h1><span id="screen-name">Main Menu</span>: Day <span class="turn-display"> <!-- turn number / days count --> </span></h1>
+        <h1><span id="screen-name">Main Menu</span>: Day <span class="turn-display"></span></h1>
         <ul>
           <li id="days-remain">Days Remaining: 4</li>
           <li id="parts-built">Space Craft Parts Built: 2</li>
@@ -48,13 +48,14 @@
           <button id="venture">Adventure</button>
           <h2 class="main-play-label">Spend Your Gold</h2>
           <button id="shop">Shop</button>
+          <h3 id="shop-msg"></h3>
           <h2 class="main-play-label">Use Welder And Iron to Build a Stage of Your Craft</h2>
           <button id="build">Build</button>
           <h3 id="build-msg"></h3>
         </div>
       </div>
     </div>
-    <div class="modal" tabindex="-1" id="end-game-popup">
+    <div class="modal" tabindex="-1" id="end-game-popup" data-backdrop="static" data-keyboard="false">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -71,6 +72,19 @@
             <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="container shop-container">
+    <div class="row">
+      <div class="col-sm-4">
+        <button type="click" value="Welder" class="shopItem">Welder: 3 Gold</button>
+      </div>
+      <div class="col-sm-4">
+        <button type="click" value="Iron" id="iron" class="shopItem">Iron: 3 Gold</button>
+      </div>
+      <div class="col-sm-4">
+        <button type="click" value="Iron Maker" id="ironMaker" class="shopItem">Iron Maker: 5 Gold</button>
       </div>
     </div>
   </div>

@@ -9,3 +9,7 @@ export function lose() {
   $(".modal-title").text("Whoops! You lost!");
   $(".modal-body").text(`Thanks for playing. Maybe next time. Please click the 'Play Again' button to restart.`);
 }
+
+export function showModal() {
+  $(".modal").modal("show");
+}
