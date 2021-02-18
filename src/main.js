@@ -109,4 +109,8 @@ $(document).ready(function() {
   $(".shopItem").click((event)=> {
     buy(player1, $(event.target).val(), game1);
   });
+
+  $("#play-again-btn").click(() => {
+    alert("hi")
+  })
 });
