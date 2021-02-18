@@ -142,9 +142,15 @@ $(document).ready(function() {
     updateIron(player1.iron);
     headerInformation("Building", game1.numTurns, player1.inventory.get("Craft Item"));
     $(".shop-container").hide();
+    if (player1.health <= 0 || (game1.numTurns === 20 && player1.inventory.get("Craft Item") < 3)) {
+      game1.endGame();
+    } else if (player1.inventory.get("Craft Item") >= 3) {
+      game1.endGame();
+    }
   });
   $(".shopItem").click((event)=> {
     buy(player1, $(event.target).val(), game1);
+    game1.endGame();
   });
 
   $("#play-again-btn").click(() => {
