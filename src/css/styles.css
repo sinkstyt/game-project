@@ -70,19 +70,21 @@ div.row {
   font-family: var(--heading-font-fam);
   font-size: 1.9rem;
 }
-.blue{
+.blue {
   color: #F0EFF4;
   text-shadow: var(--heading-glow);
-  font-size: 1.3rem;
+  font-size: 2.2rem;
   font-family: var(--system-response-font);
 }
 .green {
   color: #BDBF09;
   font-family: 'VT323', monospace;
+  font-size: 2.2rem;
 }
 .red {
   color: #CCC9DC;
   font-family: 'VT323', monospace;
+  font-size: 2.2rem;
 }
 .main, .followUp{
   display: none;
@@ -122,6 +124,7 @@ buttton:click {
   text-align: center;
   border: 2px groove grey;
   margin-bottom: 10px;
+  font-size: 2.2rem;
 }
 .adventures{
   display: none;
@@ -141,7 +144,7 @@ buttton:click {
   font-size: 1.6rem;
 }
 #eventStuff.red {
-  font-size: 2.0rem;
+  font-size: 2.2rem;
 }
 /* Color pallete:
 #000000 - Black
