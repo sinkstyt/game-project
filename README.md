@@ -94,13 +94,6 @@ Clone the repo:
 * To see the project assembled and rendered in browser, use the following npm prompt. A tab should open to the rendered page.
 > `$ npm run start`
 
-## How to Get Your Own API key
-* destination will be unique to project needs
-* make sure .env is listed in .gitignore (one does NOT want to share API key/s accidentally)
-* create a .env file at the root directory
-* get your own unique key from `{URL_FOR_API_KEY_GENERATION}`
-* store the key _without quotes_ in .env preceded by `API_KEY = `
-
 ## Known Bugs
 
 * _Any known issues_
