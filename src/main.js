@@ -29,19 +29,23 @@ const updateInventory = (inventory) => {
   });
 };
 
-const construction = (constructPart) => {
+const buyMsg = (constructPart) => {
   let msg = "";
   let color = "red";
+  let result = false;
+
   if(constructPart) {
     msg = "You have successfully built a Space Craft Part!";
     color = "green";
+    result = true;
+  } else if(constructPart === -1){
+    msg = "You can't build with less than 5 iron, please select another option!";
   } else if (!constructPart) {
     msg = "You can't build without a welder, please select another option!";
-  } else {
-    msg = "You can't build with less than 5 iron, please select another option!";
-  }
-  $("#build-msg").text(msg);
-  $("#build-msg").attr("class", color);
+  } 
+  $("#eventStuff").text(msg);
+  $("#eventStuff").attr("class", color);
+  return result;
 };
 
 const buy = (player1, itemBuying, game1) => {
@@ -52,12 +56,13 @@ const buy = (player1, itemBuying, game1) => {
   };
 
   if((store[itemBuying])() === -1) {
-    $("#shop-msg").attr("class", "red");
-    $("#shop-msg").text("You don't have enough gold to purchase that item!");
+    $("#eventStuff").attr("class", "red");
+    $("#eventStuff").text("You don't have enough gold to purchase that item!");
     return -1;
   } else {
-    $("#shop-msg").text(`You have purchased: ${itemBuying}!`);
-    $("#shop-msg").attr("class", "green");
+    // $("#eventStuff").empty();
+    $("#eventStuff").text(`You have purchased: ${itemBuying}!`);
+    $("#eventStuff").attr("class", "green");
     updateAllStats(player1.health, player1.gold, player1.iron);
     headerInformation("Adventuring", game1.numTurns, player1.inventory.get("Craft Item"));
     updateInventory(player1.inventory);
@@ -75,13 +80,13 @@ const resetPlayer = (player) => {
   player.gold = 2;
   player.iron = 0;
   player.health = 100;
-}
+};
 
 const resetGame = (game, player) => {
   game.player = player;
   game.isGameOver = "";
   game.numTurns = 0;
-}
+};
 
 const startGame = (player1) => {
 
@@ -99,7 +104,7 @@ const startGame = (player1) => {
     $(".followUp").hide();
     $(".main").show();
   });
-}
+};
 
 $(document).ready(function() {
   let player1 = new Player("Nat Raymond");
@@ -112,30 +117,40 @@ $(document).ready(function() {
   updateInventory(player1.inventory);
 
   $('#venture').on("click", function() {
-    player1.venture();
-    headerInformation("Adventuring", game1.numTurns, player1.inventory.get("Craft Item"));
+    let msg = player1.venture();
     updateAllStats(player1.health, player1.gold, player1.iron);
-    $("#build-msg").empty();
     game1.endGame();
+    headerInformation("Adventuring", game1.numTurns, player1.inventory.get("Craft Item"));
     $(".shop-container").hide();
-    $("#shop-msg").text("");
-    // clearAdventureResults();
-    // displayAdventureResults();
-  });
+    $("#eventStuff").attr("class", "blue");
+    $("#eventStuff").text(msg);
+  });  
   $('#shop').on("click", function() {
-    // mainMenu.hide();
-    $("#build-msg").empty();
     $(".shop-container").toggle();
   });
   $('#build').on("click", function() {
     let constructResult = player1.constructPart();
-    construction(constructResult);
-    constructResult && game1.endGame();
+
+    buyMsg(constructResult);
+    player1.inventory.get("Welder") !== 1 && player1.inventory.get("Iron Maker") !== 1 && constructResult && game1.endGame();
+    if(constructResult === (-1)) {
+      $("#eventStuff").text("You can't build with less than 5 iron, please select another option!");
+      $("#eventStuff").attr("class", "red");
+    }
+
+    updateInventory(player1.inventory);
+    updateIron(player1.iron);
+    headerInformation("Building", game1.numTurns, player1.inventory.get("Craft Item"));
     $(".shop-container").hide();
-    $("#shop-msg").text("");
+    if (player1.health <= 0 || (game1.numTurns === 20 && player1.inventory.get("Craft Item") < 3)) {
+      game1.endGame();
+    } else if (player1.inventory.get("Craft Item") >= 3) {
+      game1.endGame();
+    }
   });
   $(".shopItem").click((event)=> {
     buy(player1, $(event.target).val(), game1);
+    game1.endGame();
   });
 
   $("#play-again-btn").click(() => {
@@ -148,5 +163,5 @@ $(document).ready(function() {
     $("#name").text(player1.name);
     updateAllStats(player1.health, player1.gold, player1.iron);
     updateInventory(player1.inventory);
-  })
+  });
 });
