@@ -146,6 +146,25 @@ buttton:click {
 #eventStuff.red {
   font-size: 2.2rem;
 }
+.log {
+  max-height: 360px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+.log::-webkit-scrollbar {
+  display: none;
+  scrollbar-width: none;
+}
+.logMSG {
+  font-size: 15px;
+  margin: 0 10px 10px 0;
+  color: #F0EFF4;
+  /* text-shadow: var(--heading-glow); */
+  font-family: var(--system-response-font);
+  font-family: var(--system-response-font);
+  font-family: var(--system-response-font);
+  font-family: var(--system-response-font);
+}
 /* Color pallete:
 #000000 - Black
 #0C1821 - Rich Black FOGRA 29
@@ -157,3 +176,13 @@ buttton:click {
 #F0EFF4 - Ghost White
 */
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+.example::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.example {
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
+}
