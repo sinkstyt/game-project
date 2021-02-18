@@ -63,8 +63,18 @@ div.row {
   text-overflow: initial;
   text-align: center;
 }
+div.row {
+  text-align: center;
+}
+.evHeading {
+  font-family: var(--heading-font-fam);
+  font-size: 1.9rem;
+}
 .blue{
-  color: #302F4D;
+  color: #F0EFF4;
+  text-shadow: var(--heading-glow);
+  font-size: 1.3rem;
+  font-family: var(--system-response-font);
 }
 .green {
   color: #BDBF09;
