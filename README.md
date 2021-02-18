@@ -94,13 +94,6 @@ Clone the repo:
 * To see the project assembled and rendered in browser, use the following npm prompt. A tab should open to the rendered page.
 > `$ npm run start`
 
-## How to Get Your Own API key
-* destination will be unique to project needs
-* make sure .env is listed in .gitignore (one does NOT want to share API key/s accidentally)
-* create a .env file at the root directory
-* get your own unique key from `{URL_FOR_API_KEY_GENERATION}`
-* store the key _without quotes_ in .env preceded by `API_KEY = `
-
 ## Known Bugs
 
 * _Any known issues_
@@ -109,12 +102,14 @@ Clone the repo:
 ## License
 _GPL_
 
-Copyright (c) 2021 **_Tyler Sinks_**
+Copyright (c) 2021 **_Logan Roth, Morgan Bradford, Tien Nguyen, and Tyler Sinks_**
 
 ## Contact Information
-* Reach Tyler: via <a href="https://www.linkedin.com/in/tyler-sinks-93438137/" target="_blank">LinkedIn</a> or <a href="mailto:tyler.sinksa@gmail.com" target="_blank">email</a>.<br>
+* Reach Logan via <a href="https://www.linkedin.com/in/lo-gr/" target="_blank">LinkedIn</a> or <a href="mailto:diamondintheroth@gmail.com" target="_blank">email</a>.<br>
+Checkout Logan's <a href="https://github.com/Lo-GR" target="_blank">GitHub profile</a>.</li>
+* Reach Tien: via <a href="https://www.linkedin.com/in/nguyentien96/" target="_blank">LinkedIn</a> or <a href="mailto:tien96ng@gmail.com" target="_blank">email</a>.<br>
+Checkout Tien's <a href="https://github.com/Tien96ng" target="_blank">GitHub profile</a>.</li>
+* Reach Morgan: via <a href="https://www.linkedin.com/in/morganjbradford/" target="_blank">LinkedIn</a> or <a href="mailto:morganjbradford95@gmail.com" target="_blank">email</a>.<br>
+Checkout Morgan's <a href="https://github.com/" target="_blank">GitHub profile</a>.</li>
+* Reach Tyler: via <a href="https://www.linkedin.com/in/tyler-sinks-93438137/" target="_blank">LinkedIn</a> or <a href="mailto:tyler.sinks@gmail.com" target="_blank">email</a>.<br>
 Checkout Tyler's <a href="https://github.com/sinkstyt" target="_blank">GitHub profile</a>.</li>
-
-
-Some Brainstorming notes from Day 1:
-
