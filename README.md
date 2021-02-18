@@ -1,4 +1,5 @@
-# Roguelike Sim Game
+# Planet Escape
+_originally created February 15 through 18, 2021_   <img src="src/images/astronaut_jumping.gif" alt="spaceman jumping animation" height="200">
 
 #### An RPG-esque game that showcases an MVP of:
 * A role-playing game that can be completed by the user: win/loss.
@@ -15,50 +16,26 @@
 
 ## Description
 
-### DAY 1 brainstorming:
-## MVP Goals:
+#### MVP Goals:
 
 1. Player can start game.
 2. Player can enter name and is greeted with scenario description, each turn's possible events, and object of the game.
 3. Each turn allows player to choose from these options:
->  1. go on adventure (automatic): returns gold/resources(iron).
->  2. returns gold/iron between 1-3.
+>  1. go on adventure (automatic): returns gold/resources(iron) or health decreases
+>  2. open shop menu with three options: buy iron maker, buy iron, buy welder.
 >  3. assemble a part to repair your space craft.
-      
-      or lose gold/iron/health 1-3.
-      if health 0 = day lost.
-  * go to shop--> browse --> purchase item(s): iron, iron maker, welder(to build parts).
-  * construct parts (requires 5 iron + welder)
+4. Player can view their inventory and stats.
+5. Player can win by building 3 spaceship parts before 20 days elapse.
+6. Player can lose by not finishing in 20 rounds or reaching health < or equal to 0.
+7. Day is counted when successful player action occurs.
 
-player can open shop menu.
-    - Object w/ arrays depending on what we want (Difficulity, progress, player level etc.)
-    - iron price = 3 gold.
-    - iron maker(1 iron/day) = 5 gold
-    - welder = 3
-4. player can view their inventory and stats.
-    - Gold
-    - Iron
-    - Health
-    - Equip Weapons, Armor, etc (Different sub categories)**stretch**
-    - _Update UI function to be called every click?_
-
-5. player can win: user need 3 spaceship parts in inventory.
-    - Dungeon Rewards?
-6. player can lose by not finishing in 20 rounds (or reaching 0 hp - stretch?).
-7. player can end turn.
-
-* Battle system:
-1. player can fight NPCs.
-2. player can earn experience.
-3. player can gain items (weapons, armor, space parts).
- 
-# strech goals: 
-* Repeatable story/multiple paths.
-
-# Notes:
-- New Feature = New Branch (Example: "game-shop-[person's name]")
-- Each Feature should be like task clipboard
-- Feature = done, everyone on the team meets to do a PR and merge
+#### Strech Goals: 
+1. Repeatable story/multiple paths.
+2. Events that happen each turn are populated to a game log.
+3. Battle system:
+4. Player can fight NPCs.
+5. Player can earn experience.
+6. Player can gain items (weapons, armor, space parts).
 
 ## Setup/Installation Requirements
 
@@ -96,8 +73,7 @@ Clone the repo:
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* _No known bugs at this time_
 
 ## License
 _GPL_
