@@ -44,7 +44,7 @@ View directly:
 
 Download the repo:
 * Go to https://github.com/sinkstyt/game-project
-* Navigate to and click the green <img src="code.PNG" alt="code" height="20"> button on middle upper right part of webpage.
+* Navigate to and click the green ![green code button](src/images/code_button.png) button on middle upper right part of webpage.
 * Click on "Download ZIP"
 * Navigate to the downloaded zip and open it.
 * Open the folder inside the zip.
@@ -52,7 +52,7 @@ Download the repo:
 
 Clone the repo:
 * Go to https://github.com/sinkstyt/game-project
-* Navigate to and click the green <img src="code.PNG" alt="code" height="20"> that is near the right edge of the tab bar atop this README.
+* Navigate to and click the green ![green code button](src/images/code_button.png) that is near the right edge of the tab bar atop this README.
 * Copy the HTTPs address to your clipboard.
 * Open terminal or bash and navigate to or create a directory into which you will store the entire project on your machine.
 * Once you have switched into your desired directory, in your terminal or command line prompt, enter the following:
