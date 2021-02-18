@@ -6,6 +6,8 @@ body {
   font-family: 'Spectral SC', serif;
 }
 .jumbotron {
+  background-color: #302F4D;
+  color: #F0EFF4;
   text-align: center;
   font-family: 'Syne Mono', monospace;
 }
@@ -13,6 +15,10 @@ body {
   color: #BDBF09;
   font-weight: 500;
   font-family: 'Oswald', sans-serif;
+}
+h1 {
+  font-weight: 600;
+  font-size: 4.0rem;
 }
 h2 {
   font-size: 2.3rem;
