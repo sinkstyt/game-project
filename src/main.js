@@ -92,6 +92,7 @@ const startGame = (player1) => {
     $(".startPage").hide();
     $(".followUp").show();
     player1.name = $("#userName").val();
+    $("#followUpText").text("");
     $("#followUpText").prepend(`Good Luck ${player1.name}. You have 20 days left.`);
   });
   $(".continueButton").click(function(){
@@ -103,16 +104,7 @@ const startGame = (player1) => {
 $(document).ready(function() {
   let player1 = new Player("Nat Raymond");
   let game1 = new Game(player1);
-  $(".beginButton").click(function(){
-    $(".startPage").hide();
-    $(".followUp").show();
-    player1.name = $("#userName").val();
-    $("#followUpText").prepend(`Good Luck ${player1.name}. You have 20 days left.`);
-  });
-  $(".continueButton").click(function(){
-    $(".followUp").hide();
-    $(".main").show();
-  });
+  startGame(player1);
   headerInformation("Main Menu", game1.numTurns, player1.inventory.get("Craft Item"));
 
   $("#name").text(player1.name);
