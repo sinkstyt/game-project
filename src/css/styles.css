@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&family=Spectral+SC:wght@500&family=Syne+Mono&family=VT323&display=swap');
-
+:root {
+  --heading-glow: -1px -2px 2px #BDBF09, 1px 1px 1px #324A5F, -1px 2px 3px #1B2A41;
+  --heading-font-fam: 'Syne Mono', monospace;
+  --big-block-weight: font-weight: 600;
+  --big-block-font-size: 4.0rem;
+  --pink-border-2px: 2px groove #324A5F;
+  --system-response-font: 'VT323', monospace;
+}
 body {
   color: #F0EFF4;
   background-color: #0C1821;
@@ -9,7 +16,7 @@ body {
   background-color: #302F4D;
   color: #F0EFF4;
   text-align: center;
-  font-family: 'Syne Mono', monospace;
+  font-family: var(--heading-font-fam);
 }
 .jumbotron p {
   color: #BDBF09;
@@ -17,6 +24,7 @@ body {
   font-family: 'Oswald', sans-serif;
 }
 h1 {
+  text-shadow: var(--heading-glow);
   font-weight: 600;
   font-size: 4.0rem;
 }
