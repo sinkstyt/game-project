@@ -36,7 +36,6 @@ const construction = (constructPart, player) => {
 
   if(player.iron < 5) {
     msg = "You can't build with less than 5 iron, please select another option!";
-    $("#build-msg").attr("class", color);
     result = false;
   }
 
@@ -49,9 +48,8 @@ const construction = (constructPart, player) => {
   } else {
     msg = "You can't build with less than 5 iron, please select another option!";
   }
-  $("#build-msg").text(msg);
-  $("#build-msg").attr("class", color);
-  console.log(result);
+  $("#eventStuff").text(msg);
+  $("#eventStuff").attr("class", color);
   return result;
 };
 
@@ -63,31 +61,60 @@ const buy = (player1, itemBuying, game1) => {
   };
 
   if((store[itemBuying])() === -1) {
-    $("#shop-msg").attr("class", "red");
-    $("#shop-msg").text("You don't have enough gold to purchase that item!");
+    $("#eventStuff").attr("class", "red");
+    $("#eventStuff").text("You don't have enough gold to purchase that item!");
     return -1;
   } else {
-    $("#shop-msg").text(`You have purchased: ${itemBuying}!`);
-    $("#shop-msg").attr("class", "green");
+    // $("#eventStuff").empty();
+    $("#eventStuff").text(`You have purchased: ${itemBuying}!`);
+    $("#eventStuff").attr("class", "green");
     updateAllStats(player1.health, player1.gold, player1.iron);
     headerInformation("Adventuring", game1.numTurns, player1.inventory.get("Craft Item"));
     updateInventory(player1.inventory);
   }
 };
 
-$(document).ready(function() {
-  let player1 = new Player("Nat Raymond");
-  let game1 = new Game(player1);
+const resetPlayer = (player) => {
+  player.inventory = new Map(
+    [
+      ["Weapons", []],
+      ["Armor", []],
+      ["Craft Item", 0],
+    ]
+  );
+  player.gold = 2;
+  player.iron = 0;
+  player.health = 100;
+}
+
+const resetGame = (game, player) => {
+  game.player = player;
+  game.isGameOver = "";
+  game.numTurns = 0;
+}
+
+const startGame = (player1) => {
+
+  $(".modal").modal('hide');
+  $(".startPage").show();
+  $(".main").hide();
   $(".beginButton").click(function(){
     $(".startPage").hide();
     $(".followUp").show();
     player1.name = $("#userName").val();
+    $("#followUpText").text("");
     $("#followUpText").prepend(`Good Luck ${player1.name}. You have 20 days left.`);
   });
   $(".continueButton").click(function(){
     $(".followUp").hide();
     $(".main").show();
   });
+}
+
+$(document).ready(function() {
+  let player1 = new Player("Nat Raymond");
+  let game1 = new Game(player1);
+  startGame(player1);
   headerInformation("Main Menu", game1.numTurns, player1.inventory.get("Craft Item"));
 
   $("#name").text(player1.name);
@@ -95,16 +122,15 @@ $(document).ready(function() {
   updateInventory(player1.inventory);
 
   $('#venture').on("click", function() {
-    player1.venture();
+    let msg = player1.venture();
     updateAllStats(player1.health, player1.gold, player1.iron);
-    $("#build-msg").empty();
     game1.endGame();
     headerInformation("Adventuring", game1.numTurns, player1.inventory.get("Craft Item"));
     $(".shop-container").hide();
-    $("#shop-msg").text("");
-  });
+    $("#eventStuff").attr("class", "blue");
+    $("#eventStuff").text(msg);
+  });  
   $('#shop').on("click", function() {
-    $("#build-msg").empty();
     $(".shop-container").toggle();
   });
   $('#build').on("click", function() {
@@ -116,9 +142,20 @@ $(document).ready(function() {
     updateIron(player1.iron);
     headerInformation("Building", game1.numTurns, player1.inventory.get("Craft Item"));
     $(".shop-container").hide();
-    $("#shop-msg").text("");
   });
   $(".shopItem").click((event)=> {
     buy(player1, $(event.target).val(), game1);
   });
+
+  $("#play-again-btn").click(() => {
+    //location.reload();
+    resetPlayer(player1);
+    resetGame(game1, player1);
+    startGame(player1);
+    headerInformation("Main Menu", game1.numTurns, player1.inventory.get("Craft Item"));
+
+    $("#name").text(player1.name);
+    updateAllStats(player1.health, player1.gold, player1.iron);
+    updateInventory(player1.inventory);
+  })
 });

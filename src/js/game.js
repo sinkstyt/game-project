@@ -17,7 +17,9 @@ export default class Game {
   endGame() {
     if (this.player.health <= 0 || (this.numTurns === 20 && this.player.inventory.get("Craft Item") < 3)) {
       this.isGameOver = "lose";
-      lose();
+      let death;
+      this.numTurns === 20 ? (death = "You couldn't escape by day 20...") : (death = "You lost all your health...");
+      lose(death);
       showModal();
     } else if (this.player.inventory.get("Craft Item") === 3) {
       this.isGameOver = "win";
