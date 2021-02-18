@@ -1,9 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Spectral+SC:wght@500&family=Syne+Mono&family=VT323&display=swap');
+font-family: 'Oswald', sans-serif;
+font-family: 'Spectral SC', serif;
+font-family: 'Syne Mono', monospace;
+font-family: 'VT323', monospace;
 body {
   color: #CCC9DC;
   background-color: #0C1821;
+  font-family: 'Spectral SC', serif;
 }
 .jumbotron {
   text-align: center;
+}
+.jumbotron p {
+  color: #BDBF09;
+  font-weight: 500;
+  font-family: 'Syne Mono', monospace;
+}
+.startPage, .followUp{
+  background-color: #000000;
+  border-radius: 0 8% 0 8%;
+  margin-top: 140px;
+  border: 5px groove black;
+  padding: 10px;
+  text-align: justify;
 }
 ul {
   list-style-type: none;
@@ -17,25 +36,20 @@ ul {
 .main, .followUp{
   display: none;
 }
-.startPage, .followUp{
-  background-color: #000000;
-  border-radius: 0 8% 0 8%;
-  margin-top: 140px;
-  border: 2px groove black;
-  padding: 10px;
-  text-align: center;
-}
+
 .shop-container {
   display: none;
   margin-top: 10px;
   padding: 10px;
   border: 2px groove #324A5F;
 }
-/* Color pallete::after
+/* Color pallete:
 #000000 - Black
 #0C1821 - Rich Black FOGRA 29
 #1B2A41 - Oxford Blue
 #302F4D - Space Cadet
 #324A5F - Charcoal
+#BDBF09 - Acid Green
 #CCC9DC - Languid Lavender
+#F0EFF4 - Ghost White
 */
