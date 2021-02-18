@@ -29,25 +29,20 @@ const updateInventory = (inventory) => {
   });
 };
 
-const construction = (constructPart, player) => {
+const buyMsg = (constructPart) => {
   let msg = "";
   let color = "red";
   let result = false;
-
-  if(player.iron < 5) {
-    msg = "You can't build with less than 5 iron, please select another option!";
-    result = false;
-  }
 
   if(constructPart) {
     msg = "You have successfully built a Space Craft Part!";
     color = "green";
     result = true;
+  } else if(constructPart === -1){
+    msg = "You can't build with less than 5 iron, please select another option!";
   } else if (!constructPart) {
     msg = "You can't build without a welder, please select another option!";
-  } else {
-    msg = "You can't build with less than 5 iron, please select another option!";
-  }
+  } 
   $("#eventStuff").text(msg);
   $("#eventStuff").attr("class", color);
   return result;
@@ -85,13 +80,13 @@ const resetPlayer = (player) => {
   player.gold = 2;
   player.iron = 0;
   player.health = 100;
-}
+};
 
 const resetGame = (game, player) => {
   game.player = player;
   game.isGameOver = "";
   game.numTurns = 0;
-}
+};
 
 const startGame = (player1) => {
 
@@ -109,7 +104,7 @@ const startGame = (player1) => {
     $(".followUp").hide();
     $(".main").show();
   });
-}
+};
 
 $(document).ready(function() {
   let player1 = new Player("Nat Raymond");
@@ -135,16 +130,27 @@ $(document).ready(function() {
   });
   $('#build').on("click", function() {
     let constructResult = player1.constructPart();
-    construction(constructResult, player1);
+
+    buyMsg(constructResult);
     player1.inventory.get("Welder") !== 1 && player1.inventory.get("Iron Maker") !== 1 && constructResult && game1.endGame();
+    if(constructResult === (-1)) {
+      $("#eventStuff").text("You can't build with less than 5 iron, please select another option!");
+      $("#eventStuff").attr("class", "red");
+    }
 
     updateInventory(player1.inventory);
     updateIron(player1.iron);
     headerInformation("Building", game1.numTurns, player1.inventory.get("Craft Item"));
     $(".shop-container").hide();
+    if (player1.health <= 0 || (game1.numTurns === 20 && player1.inventory.get("Craft Item") < 3)) {
+      game1.endGame();
+    } else if (player1.inventory.get("Craft Item") >= 3) {
+      game1.endGame();
+    }
   });
   $(".shopItem").click((event)=> {
     buy(player1, $(event.target).val(), game1);
+    game1.endGame();
   });
 
   $("#play-again-btn").click(() => {
@@ -157,5 +163,5 @@ $(document).ready(function() {
     $("#name").text(player1.name);
     updateAllStats(player1.health, player1.gold, player1.iron);
     updateInventory(player1.inventory);
-  })
+  });
 });
