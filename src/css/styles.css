@@ -35,6 +35,11 @@ ul {
   text-align: justify;
   list-style-type: none;
 }
+
+.blue{
+  color: blue;
+}
+
 .green {
   color: #BDBF09;
   font-family: 'VT323', monospace;
@@ -66,6 +71,17 @@ ul {
   display: none;
   margin-top: 10px;
   padding: 10px;
+  border: 2px groove grey;
+}
+.updateScreen{
+  text-align: center;
+  border: 2px groove grey;
+  margin-bottom: 10px;
+}
+.adventures{
+  display: none;
+  margin-top: 10px;
+  padding: 10px;
   border: 2px groove #324A5F;
 }
 #followUpText {
@@ -83,3 +99,4 @@ ul {
 #CCC9DC - Languid Lavender
 #F0EFF4 - Ghost White
 */
+
