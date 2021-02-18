@@ -1,38 +1,41 @@
+body {
+  color: #CCC9DC;
+  background-color: #0C1821;
+}
 .jumbotron {
   text-align: center;
 }
 ul {
   list-style-type: none;
 }
-
 .green {
   color: green;
 }
-
 .red {
   color: red;
 }
-
 .main, .followUp{
   display: none;
 }
 .startPage, .followUp{
-  margin-top: 200px;
+  background-color: #000000;
+  border-radius: 0 8% 0 8%;
+  margin-top: 140px;
   border: 2px groove black;
   padding: 10px;
   text-align: center;
 }
-
 .shop-container {
   display: none;
   margin-top: 10px;
   padding: 10px;
-  border: 2px groove grey;
+  border: 2px groove #324A5F;
 }
 /* Color pallete::after
 #000000 - Black
-0C1821 - Rich Black FOGRA 29
-1B2A41 - Oxford Blue
-324A5F - Charcoal
-CCC9DC - Languid Lavender
+#0C1821 - Rich Black FOGRA 29
+#1B2A41 - Oxford Blue
+#302F4D - Space Cadet
+#324A5F - Charcoal
+#CCC9DC - Languid Lavender
 */
