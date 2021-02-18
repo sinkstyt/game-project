@@ -39,9 +39,6 @@ _originally created February 15 through 18, 2021_   <img src="src/images/astrona
 
 ## Setup/Installation Requirements
 
-View directly:
-* You can view this directly on my <a href="https://sinkstyt.github.io/game-project/index.html" target="_blank">GitHub pages</a>.
-
 Download the repo:
 * Go to https://github.com/sinkstyt/game-project
 * Navigate to and click the green ![green code button](src/images/code_button.png) button on middle upper right part of webpage.
