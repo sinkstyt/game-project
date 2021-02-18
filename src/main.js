@@ -29,13 +29,20 @@ const updateInventory = (inventory) => {
   });
 };
 
-const construction = (constructPart) => {
-  // add update inventory
+const construction = (constructPart, player) => {
   let msg = "";
   let color = "red";
+  let result = false;
+
+  if(player.iron < 5) {
+    msg = "You can't build with less than 5 iron, please select another option!";
+    result = false;
+  }
+
   if(constructPart) {
     msg = "You have successfully built a Space Craft Part!";
     color = "green";
+    result = true;
   } else if (!constructPart) {
     msg = "You can't build without a welder, please select another option!";
   } else {
@@ -43,6 +50,7 @@ const construction = (constructPart) => {
   }
   $("#eventStuff").text(msg);
   $("#eventStuff").attr("class", color);
+  return result;
 };
 
 const buy = (player1, itemBuying, game1) => {
@@ -115,22 +123,24 @@ $(document).ready(function() {
 
   $('#venture').on("click", function() {
     let msg = player1.venture();
-    console.log(msg);
-    headerInformation("Adventuring", game1.numTurns, player1.inventory.get("Craft Item"));
     updateAllStats(player1.health, player1.gold, player1.iron);
     game1.endGame();
+    headerInformation("Adventuring", game1.numTurns, player1.inventory.get("Craft Item"));
     $(".shop-container").hide();
     $("#eventStuff").attr("class", "blue");
     $("#eventStuff").text(msg);
-  });
+  });  
   $('#shop').on("click", function() {
-    // mainMenu.hide();
     $(".shop-container").toggle();
   });
   $('#build').on("click", function() {
     let constructResult = player1.constructPart();
-    construction(constructResult);
-    constructResult && game1.endGame();
+    construction(constructResult, player1);
+    player1.inventory.get("Welder") !== 1 && player1.inventory.get("Iron Maker") !== 1 && constructResult && game1.endGame();
+
+    updateInventory(player1.inventory);
+    updateIron(player1.iron);
+    headerInformation("Building", game1.numTurns, player1.inventory.get("Craft Item"));
     $(".shop-container").hide();
   });
   $(".shopItem").click((event)=> {
