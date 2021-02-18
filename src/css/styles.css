@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&family=Spectral+SC:wght@500&family=Syne+Mono&family=VT323&display=swap');
-
+:root {
+  --heading-glow: -1px -2px 2px #BDBF09, 1px 1px 1px #324A5F, -1px 2px 3px #1B2A41;
+  --heading-font-fam: 'Syne Mono', monospace;
+  --big-block-weight: 600;
+  --big-block-font-size: 4.0rem;
+  --pink-border-2px: 2px groove #324A5F;
+  --system-response-font: 'VT323', monospace;
+}
 body {
   color: #F0EFF4;
   background-color: #0C1821;
@@ -9,7 +16,8 @@ body {
   background-color: #302F4D;
   color: #F0EFF4;
   text-align: center;
-  font-family: 'Syne Mono', monospace;
+  font-family: var(--heading-font-fam);
+  font-weight: var(--big-block-weight);
 }
 .jumbotron p {
   color: #BDBF09;
@@ -17,11 +25,14 @@ body {
   font-family: 'Oswald', sans-serif;
 }
 h1 {
+  text-shadow: var(--heading-glow);
   font-weight: 600;
   font-size: 4.0rem;
 }
 h2 {
   font-size: 2.3rem;
+  text-shadow: var(--heading-glow);
+  text-align: right;
 }
 .startPage, .followUp{
   background-color: #000000;
@@ -35,11 +46,26 @@ ul {
   text-align: justify;
   list-style-type: none;
 }
-
-.blue{
-  color: blue;
+#parts-built, #days-remain {
+  font-size: 1.7rem;
 }
-
+#name {
+  font-family: 'Spectral SC', serif;
+  font-size: 1.4rem;
+  clear: both;
+}
+div.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+.main-play-label {
+  clear: both;
+  text-overflow: initial;
+  text-align: center;
+}
+.blue{
+  color: #302F4D;
+}
 .green {
   color: #BDBF09;
   font-family: 'VT323', monospace;
@@ -55,17 +81,26 @@ ul {
 .form-group {
   padding: 4%;
 }
-.btn {
+button, .btn {
   margin: 12px;
   align-self: inherit;
+  font-family: 'Spectral SC', serif;
+  font-size: 1.2rem;
+  align-items: center;
 }
-.btn:hover {
+button:hover {
   color: #1B2A41;
   background-color: #CCC9DC;
 }
-.btn:click {
+buttton:click {
   background-color:#BDBF09;
   color: #0C1821;
+}
+.all-stats {
+  font-size: 1.3rem;
+}
+.col-md-6 {
+  padding-right: 0;
 }
 .shop-container {
   display: none;
@@ -88,6 +123,11 @@ ul {
   text-align: center;
   font-family: 'VT323', monospace;
   font-size: 22pt;
+}
+#end-game-popup {
+  color: #F0EFF4;
+  background-color: #0C1821;
+  font-family: var(--system-response-font);
 }
 /* Color pallete:
 #000000 - Black
