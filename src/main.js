@@ -111,6 +111,6 @@ $(document).ready(function() {
   });
 
   $("#play-again-btn").click(() => {
-    alert("hi")
+    location.reload()
   })
 });
